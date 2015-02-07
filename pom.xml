@@ -20,6 +20,7 @@
         <module>parent</module>
         <module>core</module>
         <module>process</module>
+        <module>ear</module>
     </modules>
 
     <build>
