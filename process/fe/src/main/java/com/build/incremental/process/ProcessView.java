@@ -19,6 +19,8 @@ public class ProcessView extends CoreView {
 
         ServiceLoader<ProcessService> processServiceLoader = ServiceLoader.load(ProcessService.class);
         processService = processServiceLoader.iterator().next();
+
+        System.out.println("ProcessView initialized");
     }
 
     @Override
