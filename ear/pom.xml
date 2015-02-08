@@ -13,10 +13,37 @@
     <artifactId>ear</artifactId>
     <packaging>ear</packaging>
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <skinnyWars>true</skinnyWars>
+
+                    <modules>
+                        <webModule>
+                            <groupId>com.build.incremental</groupId>
+                            <artifactId>process-fe</artifactId>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>com.build.incremental</groupId>
             <artifactId>process-fe</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+        <!-- explicitly need to declare transitive jars for skinny war -->
+        <dependency>
+            <groupId>com.build.incremental</groupId>
+            <artifactId>process-be</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
