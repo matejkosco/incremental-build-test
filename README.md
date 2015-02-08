@@ -24,3 +24,7 @@ modified module with dependent modules
 make a test case fail, then modify unrelated module with no dependent modules
 * after breaking the test case, the build is unstable (modified + dependent modules are build)
 * after modifying an unrelated module, broken modules and their dependent modules are rebuild again
+* 
+
+different dependency scopes
+* modified and dependent modules were build
